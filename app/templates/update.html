@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTUALIZAR</title>
+</head>
+<body>
+    <header>
+        <h1>Actualizar datos</h1>
+        <nav>
+            <a href="{{ url_for('index')}}" class="btn">volver al listado</a>
+        </nav>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" value="{{persona.nombre}}" required><br>
+        
+            <label for="direccion">Dirección:</label>
+            <input type="text" name="direccion" value="{{persona.direccion}}" required><br>
+        
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono" value="{{persona.telefono}}" required><br>
+        
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{persona.email}}" required><br>
+        
+            <button type="submit">actualizar</button>
+        </form>
+    </main>
+</body>
+</html>
