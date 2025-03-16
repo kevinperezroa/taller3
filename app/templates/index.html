@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personas</title>
+</head>
+<body>
+    <header>
+        <h1>personas</h1>
+        <nav>
+            <a href="{{ url_for('create')}}" class="btn">crear nueva persona</a>
+        </nav>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>DIRECCION</th>
+                    <th>TELEFONO</th>
+                    <th>EMAIL</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for persona in personas %}
+                <tr>
+                    <td>{{persona.id}}</td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.direccion}}</td>
+                    <td>{{persona.telefono}}</td>
+                    <td>{{persona.email}}</td>
+                    <td> 
+                    <a href="{{url_for('update',id=persona.id)}}" class="btn btn-edit">actualizar</a>
+                    <a href="{{url_for('delete',id=persona.id)}}" class="btn btn-delete" onclick="return confirm('estas seguro de eliminar el registro')">eliminar</a> 
+                    </td>                 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
