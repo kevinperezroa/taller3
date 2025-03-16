@@ -9,4 +9,4 @@ class Persona(db.Model):
     email = db.Column(db.String(50),nullable=False)
 
     def __repr__(self):
-        return f'<Persona {self.persona}>'
+        return f'<Persona {self.id}>'
